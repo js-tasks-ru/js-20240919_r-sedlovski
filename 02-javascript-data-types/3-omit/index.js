@@ -7,7 +7,6 @@
 export const omit = (obj, ...fields) => {
   const objEntries = Object.entries(obj);
 
-  // использование метода filter
   const new_array_entries = objEntries.filter(
     (item) => !fields.includes(item[0])
   );
