@@ -63,9 +63,14 @@ export default class ColumnChart {
     return element;
   }
 
-  destroy() {}
+  destroy() {
+    this.remove();
+  }
 
-  update() {}
+  update(newData) {
+    this.data = newData;
+    this.element = this.createElement();
+  }
 
   remove() {
     this.element.remove();
