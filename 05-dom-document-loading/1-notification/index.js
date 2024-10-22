@@ -35,25 +35,16 @@ export default class NotificationMessage {
 
   show(target = document.body) {
     if (NotificationMessage.lastComponentShow) {
-      NotificationMessage.lastComponentShow.hide();
+      NotificationMessage.lastComponentShow.remove();
     }
 
     NotificationMessage.lastComponentShow = this;
-
-    this.element = this.createElement(target);
 
     this.timer = setTimeout(() => {
       this.destroy();
     }, this.duration);
 
     target.appendChild(this.element);
-  }
-
-  hide() {
-    if (this.element && this.element.parentNode) {
-      this.element.parentNode.removeChild(this.element);
-    }
-    NotificationMessage.lastComponentShow = null;
   }
 
   remove() {
